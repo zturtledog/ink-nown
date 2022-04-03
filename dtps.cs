@@ -1,5 +1,5 @@
 //# puropse : to facilitate dtps comunication
-//# author : confusedParrotfish
+//# contributor : confusedParrotfish
 //# exclude all comment formating, or just don't read this code
 
 // package net.twallowhavenstudios.extraAdditions;
@@ -25,16 +25,17 @@ namespace ink_nown {
 
         private secdar sec;
 
-        //forms of load / entrypoint
-
+        //.forms of load / entrypoint
+            //#load from file
         public dtps load(string file) {
             return (txt(System.IO.File.ReadAllText(@file)));
         }
-        public dtps loadEncrypted(string crkey, string file) {
-            return (txt(cryptography.DecryptString(crkey, System.IO.File.ReadAllText(@file))));
+        public dtps loadencrypted(string crkey, string file) {
+            return (txt(cryptography.decryptstring(crkey, System.IO.File.ReadAllText(@file))));
         }
-        public dtps txtEncrypted(string crkey, string file) {
-            return (txt(cryptography.DecryptString(crkey, file)));
+            //#load from string
+        public dtps txtencrypted(string crkey, string file) {
+            return (txt(cryptography.decryptstring(crkey, file)));
         }
         public dtps txt(string file) {
             string[] lines = file.Split('\n');
@@ -53,7 +54,7 @@ namespace ink_nown {
                         segment = current;
                     }
                     else if (current.StartsWith(".")) {
-                        vars.Add(new varible(current.Replace(".", "").Split(':')[0], AddFormat(current.Split(':')[1])));
+                        vars.Add(new varible(current.Replace(".", "").Split(':')[0], addformat(current.Split(':')[1])));
                     }
                     else {
                         infos.Add(current);
@@ -66,14 +67,14 @@ namespace ink_nown {
             return this;
         }
 
-        //get
+        //.get
 
-        public string getRaw(string path) {
+        public string getraw(string path) {
             foreach (secdar data in sectionData) {
                 if (numerate(data.secname) == numerate(path.Split('.')[0])) {
                     foreach (string line in data.infos) {
                         if (numerate(line.Split(':')[0]) == numerate(path.Split('.')[1])) {
-                            return (AddFormat(line.Split(':')[1]));
+                            return (addformat(line.Split(':')[1]));
                         }
                     }
                 }
@@ -81,29 +82,29 @@ namespace ink_nown {
 
             return ("");// ("dataline not found!");
         }
-        public double getNum(string path) {
-            string got = getRaw(path);
+        public double getnum(string path) {
+            string got = getraw(path);
             return (double.Parse(got));
         }
-        public bool getBool(string path) {
-            string got = getRaw(path);
+        public bool getbool(string path) {
+            string got = getraw(path);
             return (got == "true" ? true : false);
         }
-        public ArrayList getHeadAsArray(string head) {
+        public ArrayList getheadasarray(string head) {
             ArrayList end = new ArrayList();
             foreach (secdar data in sectionData) {
                 if (numerate(data.secname) == numerate(head)) {
                     foreach (string line in data.infos) {
-                        end.Add(new idra(line.Split(':')[0], AddFormat(line.Split(':')[1])));
+                        end.Add(new idra(line.Split(':')[0], addformat(line.Split(':')[1])));
                     }
                 }
             }
             return (end);
         }
 
-        //helperss
+        //.helpers
 
-        private string AddFormat(string s) {
+        private string addformat(string s) {
             return (variate(s.Replace("/~", "Ξ").Replace("~", " ").Replace('Ξ', '~').Replace("~ ~", "")));
         }
 
@@ -134,8 +135,8 @@ namespace ink_nown {
             return (end);
         }
 
-        //subclasses
-
+        //.subclasses
+            //#container to lines
         public class idra {
             public string name;
             public string value;
@@ -145,7 +146,7 @@ namespace ink_nown {
                 value = v;
             }
         }
-
+            //#container for section
         public class secdar {
             public string secname;
             public ArrayList infos;
@@ -155,7 +156,7 @@ namespace ink_nown {
                 infos = (ArrayList)data.Clone();
             }
         }
-
+            //#contains varible
         public class varible {
             public string name = "";
             public string value = "";
@@ -166,19 +167,22 @@ namespace ink_nown {
             }
         }
 
-        //compile
-
-        public void startSection(string section) {
+        //.compile
+            //#create new section
+        public void startsection(string section) {
             sec = new secdar(section, new ArrayList());
         }
+            //#insert a new entry into the section
         public void insert(string nyble, object item) {
             sec.infos.Add(nyble + ": " + (string)item);
         }
-        public void endSection() {
+            //#closes the section and adds it to the object
+        public void endsection() {
             sectionData.Add(sec);
             sec = null;
         }
-        public void addSectionArray(string name, string[] data) {
+            //#adds a array as a section
+        public void addsectionarray(string name, string[] data) {
             ArrayList end = new ArrayList();
             int i = 0;
             foreach (String thing in data) {
@@ -187,9 +191,10 @@ namespace ink_nown {
             }
             sectionData.Add(new secdar(name, end));
         }
-        public void addVarible(string name, object value) {
+        public void addvarible(string name, object value) {
             vars.Add(new varible(name, (string)value));
         }
+            //#turns the main object into a properly formated string
         public String compile() {
             String end = "";
 
@@ -208,14 +213,15 @@ namespace ink_nown {
 
             return end;
         }
-        public string compileAndEncrypt(string crkey) {
-            return cryptography.EncryptString(crkey, compile());
+            //#encrypt compiled string
+        public string compileandencrypt(string crkey) {
+            return cryptography.encryptstring(crkey, compile());
         }
 
-        //cryptography
+        //.cryptography
 
         public class cryptography {
-            public static string EncryptString(string crkey, string plainInput) {
+            public static string encryptstring(string crkey, string plainInput) {
                 byte[] iv = new byte[16];
                 byte[] array;
                 using (Aes aes = Aes.Create()) {
@@ -236,7 +242,7 @@ namespace ink_nown {
                 return Convert.ToBase64String(array);
             }
 
-            public static string DecryptString(string crkey, string cipherText) {
+            public static string decryptstring(string crkey, string cipherText) {
                 byte[] iv = new byte[16];
                 byte[] buffer = Convert.FromBase64String(cipherText);
                 using (Aes aes = Aes.Create()) {

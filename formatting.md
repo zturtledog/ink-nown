@@ -12,7 +12,7 @@ the "//:" is code that has be commented out for reason stated above in a "//#" o
 
 the "//TODO: " indicates that something is needed to be done
 
-sign files you contributed to with "//# author : "
+sign files you contributed to with "//# contributor : "
 
 ## varibles
 
@@ -22,8 +22,8 @@ varibles are all lowercase
 
 comments: 
 ```c#
-//# author : person1
-//# author : person2
+//# contributor : person1
+//# contributor : person2
 //.setup renderer
     //# icon should be 512 by 512
 rndr = new renderer(440,440, "icon.ico",  "Hello, World!");

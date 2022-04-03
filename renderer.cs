@@ -1,4 +1,5 @@
 //# puropse : to create and render a window object
+//# contributor : confusedParrotfish
 
 using System;
 using System.Drawing;
@@ -34,17 +35,19 @@ namespace ink_nown {
             mainwindow = frm;
         }
 
-        public void drawimage(Bitmap bitmap) {
-            for (int x = 0; x < bitmap.Width; x++) {
-                for (int y = 0; y < bitmap.Height; y++) {
-                    if (x >= 0 && y >= 0 && x < bitmap.Width && x < bitmap.Height) {
-                        screen.SetPixel(x, y, bitmap.GetPixel(x,y));
+        public void drawimage(int x,int y,Bitmap bitmap) {
+            for (int i = 0; i < bitmap.Width; i++) {
+                for (int j = 0; j < bitmap.Height; j++) {
+                    //.ensure that pixil is inside screen
+                    if (x+i >= 0 && y+j >= 0 && x+i < screen.Width && y+j < screen.Height) {
+                        screen.SetPixel(x+i, y+j, bitmap.GetPixel(i,j));
                     }
                 }
             }
         }
 
         public Bitmap addsprite(String path) {
+            //.automaticaly creates a bitmap from image
             return new Bitmap(path);
         }
 
