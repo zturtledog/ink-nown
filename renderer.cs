@@ -39,5 +39,9 @@ namespace ink_nown {
         public Bitmap addsprite(String path) {
             return new Bitmap(path);
         }
+
+        public void update() {
+            //TODO: render link
+        }
     }
 }
