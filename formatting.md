@@ -1,4 +1,4 @@
-<!-- all above are optional and subject to change, these are mere sugestions that atempt to create unity across the workspace -->
+<!-- all bellow are optional and subject to change, these are mere sugestions that atempt to create unity across the workspace -->
 
 ## comments
 
