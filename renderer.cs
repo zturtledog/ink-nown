@@ -9,7 +9,7 @@ namespace ink_nown {
         public int screenwidth;
         public int screenheight;
 
-        public renderer(int ix, int iy, String icn) {
+        public renderer(int ix, int iy, String icn, String title) {
             screen = new Bitmap(ix,iy);
 
             screenwidth = ix;
@@ -19,7 +19,7 @@ namespace ink_nown {
             // frm.Controls.Add(new Label() {Text = "Version 5.0"});
             frm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             frm.ClientSize = new System.Drawing.Size(ix, iy);
-            frm.Text = "engine_csharp_test_window";
+            frm.Text = title;
             frm.Icon = new Icon(icn);
             frm.ShowDialog();
 
@@ -29,9 +29,15 @@ namespace ink_nown {
         public void drawimage(Bitmap bitmap) {
             for (int x = 0; x < bitmap.Width; x++) {
                 for (int y = 0; y < bitmap.Height; y++) {
-                    screen.SetPixel(x, y, bitmap.GetPixel(x,y));
+                    if (x >= 0 && y >= 0 && x < bitmap.Width && x < bitmap.Height) {
+                        screen.SetPixel(x, y, bitmap.GetPixel(x,y));
+                    }
                 }
             }
+        }
+
+        public Bitmap addsprite(String path) {
+            return new Bitmap(path);
         }
     }
 }
