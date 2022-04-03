@@ -11,15 +11,13 @@ namespace ink_nown {
         [STAThread]
         static void Main() {
             //setup renderer
-            rndr = new renderer(300,300, "resources/peach.ico");
+                //# icon should be 512 by 512
+            rndr = new renderer(300,300, "resources/peach.ico",  "engine_csharp_test_window");
 
             //no clue what the hell this does
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            //important
-            Application.Run(rndr.mainwindow);
         }
     }
 }
