@@ -1,0 +1,16 @@
+D:\charp\test\ink-nown\bin\Debug\net5.0-windows\ink-nown.exe
+D:\charp\test\ink-nown\bin\Debug\net5.0-windows\ink-nown.deps.json
+D:\charp\test\ink-nown\bin\Debug\net5.0-windows\ink-nown.runtimeconfig.json
+D:\charp\test\ink-nown\bin\Debug\net5.0-windows\ink-nown.runtimeconfig.dev.json
+D:\charp\test\ink-nown\bin\Debug\net5.0-windows\ink-nown.dll
+D:\charp\test\ink-nown\bin\Debug\net5.0-windows\ref\ink-nown.dll
+D:\charp\test\ink-nown\bin\Debug\net5.0-windows\ink-nown.pdb
+D:\charp\test\ink-nown\obj\Debug\net5.0-windows\ink-nown.csprojAssemblyReference.cache
+D:\charp\test\ink-nown\obj\Debug\net5.0-windows\ink-nown.GeneratedMSBuildEditorConfig.editorconfig
+D:\charp\test\ink-nown\obj\Debug\net5.0-windows\ink-nown.AssemblyInfoInputs.cache
+D:\charp\test\ink-nown\obj\Debug\net5.0-windows\ink-nown.AssemblyInfo.cs
+D:\charp\test\ink-nown\obj\Debug\net5.0-windows\ink-nown.csproj.CoreCompileInputs.cache
+D:\charp\test\ink-nown\obj\Debug\net5.0-windows\ink-nown.dll
+D:\charp\test\ink-nown\obj\Debug\net5.0-windows\ref\ink-nown.dll
+D:\charp\test\ink-nown\obj\Debug\net5.0-windows\ink-nown.pdb
+D:\charp\test\ink-nown\obj\Debug\net5.0-windows\ink-nown.genruntimeconfig.cache
