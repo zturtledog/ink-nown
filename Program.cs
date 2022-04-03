@@ -4,20 +4,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ink_nown
-{
-    static class Program
-    {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
+namespace ink_nown {
+    class Program {
+        public static renderer rndr;
+
         [STAThread]
-        static void Main()
-        {
+        static void Main() {
+            //setup renderer
+            rndr = new renderer(300,300, "resources/peach.ico");
+
+            //no clue what the hell this does
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            //important
+            Application.Run(rndr.mainwindow);
         }
     }
 }
