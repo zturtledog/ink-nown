@@ -19,8 +19,6 @@ sign files you contributed to with "//# contributor : "
 varibles are all lowercase
 
 ## examples
-
-comments: 
 ```c#
 //# contributor : person1
 //# contributor : person2

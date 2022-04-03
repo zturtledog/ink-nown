@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\charp\\test\\ink-nown\\ink-nown.csproj": {}
+    "C:\\Users\\Owen\\Documents\\GitHub\\ink-nown\\ink-nown.csproj": {}
   },
   "projects": {
-    "D:\\charp\\test\\ink-nown\\ink-nown.csproj": {
+    "C:\\Users\\Owen\\Documents\\GitHub\\ink-nown\\ink-nown.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\charp\\test\\ink-nown\\ink-nown.csproj",
+        "projectUniqueName": "C:\\Users\\Owen\\Documents\\GitHub\\ink-nown\\ink-nown.csproj",
         "projectName": "ink-nown",
-        "projectPath": "D:\\charp\\test\\ink-nown\\ink-nown.csproj",
-        "packagesPath": "C:\\Users\\nycas\\.nuget\\packages\\",
-        "outputPath": "D:\\charp\\test\\ink-nown\\obj\\",
+        "projectPath": "C:\\Users\\Owen\\Documents\\GitHub\\ink-nown\\ink-nown.csproj",
+        "packagesPath": "C:\\Users\\Owen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Owen\\Documents\\GitHub\\ink-nown\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nycas\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Owen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0-windows"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
