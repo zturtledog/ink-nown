@@ -1,9 +1,12 @@
+//# puropse : to create and render a window object
+
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace ink_nown {
     public class renderer {
+        //.main output screen
         public Bitmap screen;
         public Form mainwindow;
         public int screenwidth;
@@ -17,9 +20,14 @@ namespace ink_nown {
 
             Form frm = new Form();
             // frm.Controls.Add(new Label() {Text = "Version 5.0"});
+            
+            //.set atributes of file
             frm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+                //# initial size of window
             frm.ClientSize = new System.Drawing.Size(ix, iy);
+                //# set title
             frm.Text = title;
+                //# set icon
             frm.Icon = new Icon(icn);
             frm.ShowDialog();
 

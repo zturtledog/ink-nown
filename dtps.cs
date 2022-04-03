@@ -1,3 +1,7 @@
+//# puropse : to facilitate dtps comunication
+//# author : confusedParrotfish
+//# exclude all comment formating, or just don't read this code
+
 // package net.twallowhavenstudios.extraAdditions;
 
 // import java.io.File;
@@ -8,11 +12,11 @@
 //    \n +\{
 
 using System.Collections;
-using System.Collections.Generic;
 using System;
 using System.Security.Cryptography;
 using System.IO;
 using System.Text;
+
 namespace ink_nown {
     public class dtps {
         public ArrayList sectionData = new ArrayList();
